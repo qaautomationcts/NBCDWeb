@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NBCAutomation]">
+  <test name="NBCAutomation(failed)">
+    <parameter name="Browser" value="Chrome"/>
+    <classes>
+      <class name="com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="endReport"/>
+          <include name="beforeMethod"/>
+          <include name="TwitterTags" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags -->
+    </classes>
+  </test> <!-- NBCAutomation(failed) -->
+</suite> <!-- Failed suite [NBCAutomation] -->
