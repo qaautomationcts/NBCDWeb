@@ -80,8 +80,8 @@ public class PGHomePage extends GetWebDriverInstance
 					if (lstTestData.get(iLoop).equalsIgnoreCase(we.getText()))
 					{
 						Assert.assertEquals(lstTestData.get(iLoop), we.getText(),"Expected Navigation Link is available.");
-						System.out.println(lstTestData.get(iLoop) +"::"+we.getText());
-						Extent_Reports.logger.log(LogStatus.PASS, lstTestData.get(iLoop) +"::"+we.getText());
+						System.out.println("Expected Menu:"+lstTestData.get(iLoop) +"||Actual Menu:"+we.getText());
+						Extent_Reports.logger.log(LogStatus.PASS,"Expected Menu:"+ lstTestData.get(iLoop) +"||Actual Menu:"+we.getText());
 	
 						break;
 					}
