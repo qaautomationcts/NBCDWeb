@@ -2,18 +2,18 @@
 <testng-results skipped="0" failed="0" ignored="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="NBCAutomation" duration-ms="32474" started-at="2017-10-23T07:55:01Z" finished-at="2017-10-23T07:55:33Z">
+  <suite name="NBCAutomation" duration-ms="60202" started-at="2017-10-24T22:41:47Z" finished-at="2017-10-24T22:42:48Z">
     <groups>
       <group name="TCHomePage">
-        <method signature="TCHomePage.MenuDetails(java.lang.String)[pri:0, instance:com.nbcd.Test.TCHomePage@2b227436]" name="MenuDetails" class="com.nbcd.Test.TCHomePage"/>
+        <method signature="TCHomePage.MenuDetails(java.lang.String)[pri:0, instance:com.nbcd.Test.TCHomePage@3f86674b]" name="MenuDetails" class="com.nbcd.Test.TCHomePage"/>
       </group> <!-- TCHomePage -->
       <group name="TCShowHomePage">
-        <method signature="TCShowHomePage_043VerifyTwitterTags.TwitterTags(java.lang.String)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@510bcd10]" name="TwitterTags" class="com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags"/>
+        <method signature="TCShowHomePage_043VerifyTwitterTags.TwitterTags(java.lang.String)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@718f2815]" name="TwitterTags" class="com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags"/>
       </group> <!-- TCShowHomePage -->
     </groups>
-    <test name="NBCAutomation" duration-ms="32474" started-at="2017-10-23T07:55:01Z" finished-at="2017-10-23T07:55:33Z">
+    <test name="NBCAutomation" duration-ms="60202" started-at="2017-10-24T22:41:47Z" finished-at="2017-10-24T22:42:48Z">
       <class name="com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@510bcd10]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-10-23T00:55:18Z" finished-at="2017-10-23T00:55:18Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@718f2815]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2017-10-24T15:42:18Z" finished-at="2017-10-24T15:42:18Z">
           <params>
             <param index="0">
               <value>
@@ -24,7 +24,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="TwitterTags(java.lang.String)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@510bcd10]" name="TwitterTags" duration-ms="15231" started-at="2017-10-23T00:55:18Z" finished-at="2017-10-23T00:55:33Z">
+        <test-method status="PASS" signature="TwitterTags(java.lang.String)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@718f2815]" name="TwitterTags" duration-ms="29232" started-at="2017-10-24T15:42:18Z" finished-at="2017-10-24T15:42:47Z">
           <params>
             <param index="0">
               <value>
@@ -35,11 +35,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TwitterTags -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@510bcd10]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-10-23T00:55:33Z" finished-at="2017-10-23T00:55:33Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@718f2815]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-10-24T15:42:47Z" finished-at="2017-10-24T15:42:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TwitterTags status=SUCCESS method=TCShowHomePage_043VerifyTwitterTags.TwitterTags(java.lang.String)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@510bcd10] output={null}]]]>
+                <![CDATA[[TestResult name=TwitterTags status=SUCCESS method=TCShowHomePage_043VerifyTwitterTags.TwitterTags(java.lang.String)[pri:0, instance:com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags@718f2815] output={null}]]]>
               </value>
             </param>
           </params>
@@ -48,7 +48,7 @@
         </test-method> <!-- afterMethod -->
       </class> <!-- com.nbcd.Test.TCShowHomePage_043VerifyTwitterTags -->
       <class name="com.nbcd.Test.TCHomePage">
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.nbcd.Test.TCHomePage@2b227436]" name="beforeMethod" is-config="true" duration-ms="16" started-at="2017-10-23T00:55:01Z" finished-at="2017-10-23T00:55:01Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.nbcd.Test.TCHomePage@3f86674b]" name="beforeMethod" is-config="true" duration-ms="7" started-at="2017-10-24T15:41:47Z" finished-at="2017-10-24T15:41:47Z">
           <params>
             <param index="0">
               <value>
@@ -59,7 +59,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="MenuDetails(java.lang.String)[pri:0, instance:com.nbcd.Test.TCHomePage@2b227436]" name="MenuDetails" duration-ms="16615" started-at="2017-10-23T00:55:01Z" finished-at="2017-10-23T00:55:18Z">
+        <test-method status="PASS" signature="MenuDetails(java.lang.String)[pri:0, instance:com.nbcd.Test.TCHomePage@3f86674b]" name="MenuDetails" duration-ms="30523" started-at="2017-10-24T15:41:47Z" finished-at="2017-10-24T15:42:18Z">
           <params>
             <param index="0">
               <value>
@@ -70,18 +70,18 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MenuDetails -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.nbcd.Test.TCHomePage@2b227436]" name="afterMethod" is-config="true" duration-ms="0" started-at="2017-10-23T00:55:18Z" finished-at="2017-10-23T00:55:18Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.nbcd.Test.TCHomePage@3f86674b]" name="afterMethod" is-config="true" duration-ms="1" started-at="2017-10-24T15:42:18Z" finished-at="2017-10-24T15:42:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=MenuDetails status=SUCCESS method=TCHomePage.MenuDetails(java.lang.String)[pri:0, instance:com.nbcd.Test.TCHomePage@2b227436] output={null}]]]>
+                <![CDATA[[TestResult name=MenuDetails status=SUCCESS method=TCHomePage.MenuDetails(java.lang.String)[pri:0, instance:com.nbcd.Test.TCHomePage@3f86674b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="endReport()[pri:0, instance:com.nbcd.Test.TCHomePage@2b227436]" name="endReport" is-config="true" duration-ms="607" started-at="2017-10-23T00:55:33Z" finished-at="2017-10-23T00:55:33Z">
+        <test-method status="PASS" signature="endReport()[pri:0, instance:com.nbcd.Test.TCHomePage@3f86674b]" name="endReport" is-config="true" duration-ms="430" started-at="2017-10-24T15:42:47Z" finished-at="2017-10-24T15:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endReport -->

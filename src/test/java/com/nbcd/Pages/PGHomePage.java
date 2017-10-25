@@ -27,7 +27,7 @@ public class PGHomePage extends GetWebDriverInstance
 	
 	public List<String> lstObject,lstTestData;
 	String sqlQry,Status;
-	
+	WebElement objMenu;
 //Constructor to initialize all the Page Objects  
 	
 	
@@ -49,7 +49,7 @@ public class PGHomePage extends GetWebDriverInstance
 				
 	}
 	//=========================================================================================================================
-	WebElement objMenu;
+
 	@Test
 	  public PGHomePage MenuDetails( ) throws InterruptedException, FilloException 
 	  {
@@ -70,10 +70,10 @@ public class PGHomePage extends GetWebDriverInstance
 		 {
 		  List<WebElement> totalNavigationmenu = Utilities.returnElements(driver,lstObject.get(2),lstObject.get(1));
 		
-		 int totalNavigationmenuSize = totalNavigationmenu.size();
+		  int totalNavigationmenuSize = totalNavigationmenu.size();
 		
-		 Iterator<WebElement> iter = totalNavigationmenu.iterator();
-		 while(iter.hasNext()) {
+		  Iterator<WebElement> iter = totalNavigationmenu.iterator();
+		  while(iter.hasNext()) {
 		     WebElement we = iter.next();
 		     for (int iLoop = 0; iLoop < lstTestData.size(); iLoop++) 
 		     {
@@ -88,8 +88,8 @@ public class PGHomePage extends GetWebDriverInstance
 					
 			 }
 		     System.out.println(we.getText());
-		 }
-		 }
+		   }
+		  }
 		 catch(Exception exc)
 		 {
 			 System.out.println(exc.getMessage());

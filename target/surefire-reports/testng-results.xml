@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="33544" started-at="2017-10-23T07:55:00Z" finished-at="2017-10-23T07:55:34Z">
+  <suite name="Suite" duration-ms="61491" started-at="2017-10-24T22:41:46Z" finished-at="2017-10-24T22:42:48Z">
     <groups>
     </groups>
-    <test name="NBCAutomation" duration-ms="33544" started-at="2017-10-23T07:55:00Z" finished-at="2017-10-23T07:55:34Z">
+    <test name="NBCAutomation" duration-ms="61491" started-at="2017-10-24T22:41:46Z" finished-at="2017-10-24T22:42:48Z">
       <class name="com.nbcd.TestRunner.TestRunner">
-        <test-method status="PASS" signature="tRun()[pri:0, instance:com.nbcd.TestRunner.TestRunner@337d0578]" name="tRun" duration-ms="33511" started-at="2017-10-23T00:55:00Z" finished-at="2017-10-23T00:55:34Z">
+        <test-method status="PASS" signature="tRun()[pri:0, instance:com.nbcd.TestRunner.TestRunner@337d0578]" name="tRun" duration-ms="61463" started-at="2017-10-24T15:41:46Z" finished-at="2017-10-24T15:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tRun -->

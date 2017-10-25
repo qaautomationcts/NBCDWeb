@@ -1,17 +1,11 @@
 package com.nbcd.Pages;
 import com.relevantcodes.extentreports.LogStatus;
 
-import static org.testng.Assert.assertTrue;
-
 import java.net.MalformedURLException;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import com.codoid.products.exception.FilloException;
@@ -30,14 +24,13 @@ public class PGShowHomePage_043VerifyTwitterTags extends GetWebDriverInstance
 	
 	public List<String> lstObject,lstTestData;
 	String sqlQry,Status;
+	WebElement objTwitterCard,objTwitterSite,objTwitterSiteId,objTwitterTitle,objTwitterDescription,objTwitterImage;
 	
+//=================================================================================================================================================================================	
 //Constructor to initialize all the Page Objects  
-	
-	
-		public PGShowHomePage_043VerifyTwitterTags(String Browser) 
-		{      
-			
-			try 
+	public PGShowHomePage_043VerifyTwitterTags(String Browser) 
+	{      
+		try 
 			{
 				
 				this.driver = GetWebDriverInstance.getBrowser(Browser);
@@ -52,18 +45,13 @@ public class PGShowHomePage_043VerifyTwitterTags extends GetWebDriverInstance
 					
 					
 		}
-		//=========================================================================================================================
-		WebElement objTwitterCard,objTwitterSite,objTwitterSiteId,objTwitterTitle,objTwitterDescription,objTwitterImage;
-		@Test
+//=========================================================================================================================
+	@Test
 		  public PGShowHomePage_043VerifyTwitterTags VerifyTwitterTags( ) throws InterruptedException, FilloException 
 		  {
 			
 			//Launching Browser with valid URL.
 			     driver.get(lstTestData.get(0));
-		
-			
-					//System.out.println(objShow.getAttribute("content"));
-			 
 			
 			try
 			 {
@@ -75,7 +63,7 @@ public class PGShowHomePage_043VerifyTwitterTags extends GetWebDriverInstance
 				objTwitterImage=Utilities.returnElement(driver,lstObject.get(17),lstObject.get(16));
 				
 			/**twitter:card*/
-				/*Assert.assertEquals(lstTestData.get(1), objTwitterCard.getAttribute("content"),"PASS");*/
+				
 				if (lstTestData.get(1).equalsIgnoreCase(objTwitterCard.getAttribute("content")))
 				{
 					Extent_Reports.logger.log(LogStatus.PASS,"Expected Result for '"+lstObject.get(0) +"':"+lstTestData.get(1) +"\n"+"Actual Result for '"+lstObject.get(0) +"':"+objTwitterCard.getAttribute("content"));

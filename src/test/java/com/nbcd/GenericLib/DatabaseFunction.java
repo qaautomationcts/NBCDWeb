@@ -1,37 +1,37 @@
 package com.nbcd.GenericLib;
 
+//====================================================== All Required Packages =======================================================================================
+
 import java.io.FileOutputStream;
 import java.net.InetAddress;
-import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
-
 import com.codoid.products.exception.FilloException;
 import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
+//=====================================================================Class,Methods Declaration=========================================================================
 public class DatabaseFunction
 {
+
+//==========================================Script Variables==============================================================================================================	
     public static com.codoid.products.fillo.Connection con;
-  
     public static String computerName,sql,Path;
-    public static int projectVersionID,projectID,runID,testSuiteID,testCaseID,testDataID;
     public String sqlQuery;
     public static String fileType;
+//==========================================================================================================================================================================
+    
+    Fillo fillo=new Fillo();  //API for Java to connect with Excel as database.
   
-    Fillo fillo=new Fillo();
-   /* String  extensionFormat = new SimpleDateFormat("yyyyMMddHHmm'.xls'").format(new Date());
-    String filename = System.getProperty("user.dir").concat("\\test-output\\Output"+extensionFormat) ;
-*/   
-    public DatabaseFunction()
+    public DatabaseFunction() //Constructor of the class.
     {
     	 
 	    try
 	    {
-	        computerName = InetAddress.getLocalHost().getHostName();
-	        Path=System.getProperty("user.dir");
+	        computerName = InetAddress.getLocalHost().getHostName();   // Name of the System where user is executing the Scripts.
+	        Path=System.getProperty("user.dir");                       // Soruce Directory of the Source code
 	        
 	    }
 	    catch (Exception exc)
@@ -39,11 +39,15 @@ public class DatabaseFunction
 	        System.out.println("DBConnection Failed"+exc);
 	        
 	    }
-  }
+     }
     //##################################################################################################################################
+    /** Name of the Fuction: fnGetDbConnection
+        Description:This function will  return the connection object for the file type.
+        Input Type: Type of the file which needs to connect as Database. Ex: 'Object Repository','Input'
+        Return Value:  connection object. */
+    
     public Connection fnGetDbConnection(String FileType)
     {   
-    	String genericPath1=System.getProperty("user.dir").concat("\\src\\test\\resources\\TestData\\");
     	String genericPath=System.getProperty("user.dir").concat("\\src\\main\\resources\\");
     	
     	try
@@ -88,93 +92,61 @@ public class DatabaseFunction
     	}
     	
     	return con;
-    }
-    //##########################################################################################################################################
-
-    public void fnWriteToExcel(String strQuery) throws FilloException
-    {
-    	
-    	int iCnt = 0;
-    	FileOutputStream fileOut;
-    	Connection connection;
-    	
-    
-    	fnGetDbConnection("Output");
-    	       
-    	         
-    	          con.executeUpdate(strQuery);
-
-    	          con.close();
-    	}
-//=======================================================================
-    public void fnTestData(String strQuery) throws FilloException
-    {
-    	fnGetDbConnection("Input");
-    	con.executeUpdate(strQuery);
-    	con.close();
-    }
-		
-		
-    
-    //##########################################################################################################################################
-
-    // <summary>
-    // Function to execute Sql Qry
-    // </summary>
-    // <param name="sqlquery">SqlQuery</param>
-    // <returns>Records</returns>
-
-public List<String> fnExecuteSql(String sqlQuery,String FileType,String ColName)
-//public List<String> fnExecuteSql(String sqlQuery,String FileType)
+     }
+ //##########################################################################################################################################
  
-{
+    /** Name of the Fuction: fnExecuteSql
+    Description:This function will  execute the sql query.
+    Input Type: SQL Query,File Type,Col Name: * (all the records), colname(records for specific column). Ex: 'Object Repository','Input'
+    Return Value:  connection object. */
 
-	List<String> list = new ArrayList<String>();
-	String colVal = null;
-	ArrayList<String> colName;
-try
-{
-	fnGetDbConnection(FileType);
+    public List<String> fnExecuteSql(String sqlQuery,String FileType,String ColName)
+
+    {
+
+    	List<String> list = new ArrayList<String>();
+    	ArrayList<String> colName;
+	    try
+	    {
+	    	fnGetDbConnection(FileType);
+		
+	    	Recordset recordset=con.executeQuery(sqlQuery);
+		
+	    	colName=recordset.getFieldNames();
 	
-	Recordset recordset=con.executeQuery(sqlQuery);
-	
-	colName=recordset.getFieldNames();
-
-	if (ColName == "*") 
-	{
-		while(recordset.next())  //For All the Columns
-		{
-			for (int iLoop = 0; iLoop < colName.size(); iLoop++)
-			{
-			
-				list.add(recordset.getField(colName.get(iLoop)));
+	    	if (ColName == "*") 
+	    	{
+	    		while(recordset.next())  //For All the Columns
+	    		{
+	    			for (int iLoop = 0; iLoop < colName.size(); iLoop++)
+	    			{
 				
-				
-			}
+	    				list.add(recordset.getField(colName.get(iLoop)));
+					
+	    			}
+	    		}
+	    	}
+	    	else //For Single  Column
+	    	{
+	    		while(recordset.next())  //For All the Columns
+	    		{
+	    			list.add(recordset.getField(ColName));
+	    		}
+	    	}
+			recordset.close();
+			con.close();
+	 
+	    }
+		catch (Exception SQLException)
+		{       
+		   System.out.print("Exception in fnExecuteSql:"+SQLException);
+		    
 		}
-	}
-	else //For Single  Column
-	{
-		while(recordset.next())  //For All the Columns
-		{
-		 list.add(recordset.getField(ColName));
-		}
-	}
-		recordset.close();
-		con.close();
- 
-   
-}
-catch (Exception SQLException)
-{       
-   System.out.print("Exception in fnExecuteSql:"+SQLException);
-    
-}
-return list;
+		return list;
 
-}
+    }
 //##########################################################################################################################################
-//##########################################################################################################################################
+
 
 //<summary>
 //Function to get the object details from database for the specified screen name.
@@ -187,13 +159,11 @@ return list;
 	{
 		Hashtable<String, String> htbl = new Hashtable<String,String>();
 		
-		String colVal = null;
-		ArrayList<String> colName;
-	try
+		try
 	{
 		fnGetDbConnection("TestRunner");
 		Recordset recordset=con.executeQuery(sqlQuery);
-		 colName = recordset.getFieldNames();
+		 recordset.getFieldNames();
 	
 	    while(recordset.next())  
 		{
@@ -220,12 +190,11 @@ return list;
 // <param name="screenName">Screen Name</param>
 // <returns>True if Screen Name exists in database else returns false.</returns>
 
-	//public Hashtable<String,String> getObjects(String sqlQuery,String FileType)
+	
 	public List<String> getTestDataObject(String sqlQuery,String FileType)
 	{
-		//Hashtable<String, String> htbl = new Hashtable<String,String>();
+		
 		List<String> list = new ArrayList<String>();
-		String colVal = null;
 		ArrayList<String> colName;
 	try
 	{

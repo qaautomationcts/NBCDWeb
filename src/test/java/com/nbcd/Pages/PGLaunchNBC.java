@@ -1,16 +1,11 @@
 package com.nbcd.Pages;
 
-import java.net.MalformedURLException;
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.codoid.products.exception.FilloException;
 import com.nbcd.GenericLib.DatabaseFunction;
-import com.nbcd.GenericLib.GetWebDriverInstance;
 import com.nbcd.GenericLib.Synchronization;
 import com.nbcd.GenericLib.Utilities;
 public class PGLaunchNBC 
@@ -23,7 +18,7 @@ public class PGLaunchNBC
 	
 	public List<String> lstObject;
 	String sqlQry,Status;
-
+	WebElement objNBCLogo;
 	
 //Constructor to initialize all the Page Objects  
 		public PGLaunchNBC(WebDriver driver) 
@@ -31,10 +26,9 @@ public class PGLaunchNBC
 			this.driver = driver; 
 			
 			
-			
 		}
 //=========================================================================================================================
-		WebElement objNBCLogo;
+		
 		@Test
 		  public boolean  LaunchNBC( ) throws InterruptedException, FilloException 
 		  {

@@ -1,5 +1,6 @@
 package com.nbcd.GenericLib;
 
+//============================================IMPORT PACKAGES====================================================================================================
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,22 +10,21 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.remote.CommandExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+//=========================================================CLASS & METHODS =============================================================================================
 public class GetWebDriverInstance {
 
 	private static Map<String, WebDriver> drivers = new HashMap<String, WebDriver>();
-	//private static  WebDriver  driver= null;
+	
  	private static String  genericPath=System.getProperty("user.dir").concat("\\src\\test\\resources\\DriverExecutable\\");
  	
 	
