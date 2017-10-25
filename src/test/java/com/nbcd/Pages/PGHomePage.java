@@ -1,5 +1,6 @@
 package com.nbcd.Pages;
 import com.nbcd.Pages.PGLaunchNBC;
+
 import com.relevantcodes.extentreports.LogStatus;
 
 import java.net.MalformedURLException;
@@ -94,7 +95,7 @@ public class PGHomePage extends GetWebDriverInstance
 			 System.out.println(exc.getMessage());
 		 }
 		
-
+		driver.close();
 		return null;
 	}
 			

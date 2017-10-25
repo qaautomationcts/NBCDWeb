@@ -134,7 +134,8 @@ public class PGShowHomePage_043VerifyTwitterTags extends GetWebDriverInstance
 				 System.out.println(exc.getMessage());
 			 }
 			
-
+			driver.close(); 
+			
 			return null;
 		}
 				
